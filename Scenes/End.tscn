@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fonts/Pixelmania.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/End.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "End"
+length = 4.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("VBoxContainer/CenterContainer/Label:anchor_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 2, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 3.3, 4 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("VBoxContainer/CenterContainer2/Label:anchor_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.6, 1.2, 2.9, 3.5 )
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide"
+}, {
+"args": [  ],
+"method": "show"
+}, {
+"args": [  ],
+"method": "start_splash"
+} ]
+}
+
+[node name="MarginContainer" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 1320.0
+margin_bottom = 840.0
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 341.0
+margin_right = 1320.0
+margin_bottom = 463.0
+
+[node name="Label" type="Label" parent="VBoxContainer/CenterContainer"]
+margin_left = 212.0
+margin_right = 1108.0
+margin_bottom = 122.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.921569, 0.909804, 0.780392, 1 )
+text = "GOOD STUFF"
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 467.0
+margin_right = 1320.0
+margin_bottom = 499.0
+
+[node name="Label" type="Label" parent="VBoxContainer/CenterContainer2"]
+margin_left = 493.0
+margin_right = 826.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.921569, 0.909804, 0.780392, 1 )
+text = "WE ARE DONE HERE"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/End = SubResource( 3 )

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Scream1.wav-c77cbb271371f5b939288fd57f870caa.sample"
+
+[deps]
+
+source_file="res://Audio/Scream1.wav"
+dest_files=[ "res://.import/Scream1.wav-c77cbb271371f5b939288fd57f870caa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
