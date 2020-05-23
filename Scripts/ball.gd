@@ -63,10 +63,10 @@ func _integrate_forces(state):
 	else:
 		set_linear_damp(0)
 		
-	if abs(get_linear_velocity().y) < 30:
-		set_gravity_scale(2)	
-	elif get_position().y > paddle_node.get_position().y:
+	if get_position().y > paddle_node.get_position().y:
 		set_gravity_scale(4)
+	elif get_linear_velocity().y > 0:
+		set_gravity_scale(1)
 	else:
 		set_gravity_scale(0)
 		
